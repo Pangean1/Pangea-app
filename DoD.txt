@@ -1,8 +1,8 @@
 PANGEA - DEFINITION OF DONE
 
-- Last version of running code deployed on virtual pc
-- Last version of source code deployed on virtual pc
-- Code execution is tested on virtual pc
+- Last version of running code deployed on virtual server
+- Last version of source code deployed on virtual server
+- Code execution is tested on virtual server
 - Code deployed on the test environment identical to production environment
 - Configurations or build changes documented on Git 
 - Running code is complete when it goes through tests
