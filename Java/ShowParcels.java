@@ -13,7 +13,7 @@ ResultSet resultSet = MySQLHelper.readDataFromMySQL("ParcelData");
 
 while (resultSet.next()) {
     String column1 = resultSet.getString("parcelId");
-    String column2 = resultSet.getString("parcelStatus");
+    String column2 = resultSet.getString("parcelState");
     String column3 = resultSet.getString("parcelLatitude");
     String column4 = resultSet.getString("parcelLongitude");
     String column5 = resultSet.getString("parcelValue");

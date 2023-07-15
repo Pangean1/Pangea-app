@@ -1,4 +1,4 @@
-// Display Wallet Address QR code
+// Display Wallet Address and QR code
 
 // ---------------------------------------------------------------------
 import java.sql.Connection;
@@ -41,6 +41,10 @@ public class MySQLHelper {
         // Close the statement and database connection
         statement.close();
         connection.close();
+
+		// Display the address in displayWalletAddress textfield
+		TextView displayWalletAddress = findViewById(R.id.displayWalletAddress);
+		displayWalletAddress.setText(resultSet);
 
 		// Generate the QR code image using the MultiFormatWriter
 		// Set the size, encoding, and error correction level of the QR code using the BitMatrix

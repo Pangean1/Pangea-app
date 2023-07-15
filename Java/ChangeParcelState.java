@@ -1,4 +1,4 @@
-// Change Parcel Status
+// Change Parcel State
 
 // ---------------------------------------------------------------------
 import java.sql.Connection;
@@ -9,16 +9,16 @@ import java.sql.SQLException;
 // ---------------------------------------------------------------------
 // Get parcelID
 String parcelID = parcelIDSelected.getValue();
-// Get status type (free/reserved/sold) by parameters
-String statusType = statusType.getValue();
+// Get state type (created/locked/release/inactive) by parameters
+String stateType = stateType.getValue();
 
 String table = "ParcelData";
 String column1Value = parcelID;
-String column2Value = statusType;
+String column2Value = stateType;
 	
 	try {
 		MySQLHelper.changeData(table, column1Value, column2Value);
-		System.out.println("Parcel Status Changed");
+		System.out.println("Parcel State Changed");
 		} catch (SQLException e) {
 			System.err.println("Error: " + e.getMessage());
 			}
@@ -34,7 +34,7 @@ public class MySQLHelper {
         Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
 		
 		// update the database with the new data
-		PreparedStatement ps = connection.prepareStatement("UPDATE " + tableName + " SET " + parcelStatus + "=" + column2Value + " WHERE " + parcelId + "=" + column1Value);
+		PreparedStatement ps = connection.prepareStatement("UPDATE " + tableName + " SET " + parcelState + "=" + column2Value + " WHERE " + parcelId + "=" + column1Value);
 		ps.setString(1, column2Value);					
 		ps.executeUpdate();
 	  }

@@ -15,7 +15,7 @@ String table = "ParcelData";
 String column1Value = parcelID;
 	
 	try {
-		MySQLHelper.changeData(table, column1Value);
+		MySQLHelper.displayData(table, column1Value);
 		System.out.println("Data Found");
 		} catch (SQLException e) {
 			System.err.println("Error: " + e.getMessage());
